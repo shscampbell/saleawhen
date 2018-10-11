@@ -106,6 +106,8 @@ def askawhen_result():
     isvinyl = request.args.get('prop_vinyl')
     # Does the home have non-ceramic tile flooring?
     isnctile = request.args.get('prop_floor')
+    # Are pets disallowed from the property (like in some condos)?
+    isnopet = request.args.get('prop_pets')
     # The requested quantile of the survival function.
     quantile = request.args.get('conflevel')
 
@@ -151,18 +153,55 @@ def askawhen_result():
     else:
         isnctile = 1
         nctilechecked = "checked"
+    if isnopet is None:
+        isnopet = 0
+        petchecked = ""
+    else:
+        isnopet = 1
+        petchecked = "checked"
 
     if brag > br:
         message = 'Error: The number of bedrooms above ground is greater ' + \
             'than the total number of bedrooms.'
     else:
-        # Calculate the expected sale time.
-        sale = sale_model.saletimeCalgary(
-            month, brag, bath, sqft, tax, age, isapt,
-            isflood, isfence, ishottub, iscurts,
-            isvinyl, isnctile, quantile)
-        message = F'This listing is {quantile}% likely to sell ' + \
-            F'in {sale} days.'
+        iserr = False
+        try:
+            sqftval = float(sqft)
+            if sqftval < 0 or sqftval > 1000000:
+                raise ValueError
+        except ValueError:
+            message = "Error: invalid entry for the home's square footage."
+            iserr = True
+        try:
+            taxval = float(tax)
+            if taxval < 0 or taxval > 10000000:
+                raise ValueError
+        except ValueError:
+            message = "Error: invalid entry for the home's property tax."
+            iserr = True
+        try:
+            ageval = float(age)
+            if ageval < 0 or ageval > 150:
+                raise ValueError
+        except ValueError:
+            message = "Error: invalid entry for the home's age."
+            iserr = True
+        try:
+            qval = float(quantile)
+            if qval < 0 or qval > 99.9999:
+                raise ValueError
+        except ValueError:
+            message = "Error: invalid entry for the level of confidence. " + \
+                "Choose a number between 0 and 100."
+            iserr = True
+        if not iserr:
+            # Calculate the expected sale time.
+            sale = sale_model.saletimeCalgary(
+                int(month), int(brag), int(bath), sqftval, taxval, ageval,
+                isapt, isflood, isfence, ishottub, iscurts, isvinyl, isnctile,
+                isnopet, qval)
+            message = F'This listing is {quantile}% likely to sell ' + \
+                F'in {sale} days.'
     return render_template(
         "form/form2.html", message=message, month=month,
         comm=comm, community=communities[int(comm)], br=br, brag=brag,
@@ -170,4 +209,4 @@ def askawhen_result():
         aptchecked=aptchecked, floodchecked=floodchecked,
         fencechecked=fencechecked, hottubchecked=hottubchecked,
         curtschecked=curtschecked, vinylchecked=vinylchecked,
-        nctilechecked=nctilechecked, conflevel=quantile)
+        nctilechecked=nctilechecked, petchecked=petchecked, conflevel=quantile)

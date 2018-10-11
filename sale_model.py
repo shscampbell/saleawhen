@@ -8,5 +8,11 @@ dom = np.array([1, 3, 4, 7, 9, 11, 13, 14, 16, 18, 20, 23, 27, 30, 35, 40, 46,
     52, 60, 70, 83, 105, 124, 141, 173, 193, 228, 313, 349, 393, 598])
 dominterp = interpolate.interp1d(quantiles, dom)
 
-def saletimeCalgary(quantile):
+# def saletimeCalgary(quantile):
+#     return round(float(dominterp(quantile)))
+
+def saletimeCalgary(month, brag, bath, sqft, tax, age, isapt, isflood, isfence,
+                    ishottub, iscurts, isvinyl, isnctile, quantile):
+    # regression constants of the model
+
     return round(float(dominterp(quantile)))

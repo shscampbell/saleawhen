@@ -7,7 +7,7 @@
 <script type="text/javascript" src="view.js"></script>
 
 </head>
-<body id="main_body" onload="window.location.hash = 'footer'">
+<body id="main_body" >
 	
 	<img id="top" src="top.png" alt="">
 	<div id="form_container">
@@ -20,32 +20,11 @@
 		</div>						
 			<ul >
 			
-					<li id="li_1" >
-		<label class="description" for="month">Month of Listing </label>
+					<li id="li_3" >
+		<label class="description" for="element_3">Community </label>
 		<div>
-		<select class="element select small" id="month" name="month"> 
-			<option value="{{month}}" selected="selected">{{month}}</option>
-			<option value="1" >1</option>
-<option value="2" >2</option>
-<option value="3" >3</option>
-<option value="4" >4</option>
-<option value="5" >5</option>
-<option value="6" >6</option>
-<option value="7" >7</option>
-<option value="8" >8</option>
-<option value="9" >9</option>
-<option value="10" >10</option>
-<option value="11" >11</option>
-<option value="12" >12</option>
-
-		</select>
-		</div><p class="guidelines" id="guide_1"><small>In what month will your home be listed?</small></p> 
-		</li>		<li id="li_2" >
-		<label class="description" for="community">Community </label>
-		<div>
-		<select class="element select large" id="community" name="community"> 
-			<option value="{{comm}}" selected="selected">{{community}}</option>
-			<option value="0"></option>
+		<select class="element select large" id="element_3" name="element_3"> 
+			<option value="" selected="selected"></option>
 <option value="1">01F</option>
 <option value="2">01G</option>
 <option value="3">05D</option>
@@ -181,9 +160,9 @@
 <option value="133">Martindale</option>
 <option value="134">Mayfair</option>
 <option value="135">Mayland Heights</option>
-<option value="136">McCall</option>
-<option value="137">McKenzie Lake</option>
-<option value="138">McKenzie Towne</option>
+<option value="136">Mccall</option>
+<option value="137">Mckenzie Lake</option>
+<option value="138">Mckenzie Towne</option>
 <option value="139">Meadowlark Park</option>
 <option value="140">Meridian</option>
 <option value="141">Midnapore</option>
@@ -209,7 +188,7 @@
 <option value="161">Patterson</option>
 <option value="162">Penbrooke Meadows</option>
 <option value="163">Pineridge</option>
-<option value="164">Point McKay</option>
+<option value="164">Point Mckay</option>
 <option value="165">Pump Hill</option>
 <option value="166">Queensland</option>
 <option value="167">Ramsay</option>
@@ -233,7 +212,7 @@
 <option value="185">Sage Hill</option>
 <option value="186">Sandstone Valley</option>
 <option value="187">Scarboro</option>
-<option value="188">Scarboro/Sunalta West</option>
+<option value="188">Scarboro/ Sunalta West</option>
 <option value="189">Scenic Acres</option>
 <option value="190">Seton</option>
 <option value="191">Shaganappi</option>
@@ -287,34 +266,19 @@
 <option value="239">Woodlands</option>
 
 		</select>
-		</div><p class="guidelines" id="guide_2"><small>The community where your home is located.</small></p> 
-		</li>		<li id="li_3" >
-		<label class="description" for="brs">Number of Bedrooms </label>
+		</div><p class="guidelines" id="guide_3"><small>The community where your home is located.</small></p> 
+		</li>		<li id="li_1" >
+		<label class="description" for="element_1">Listed Price </label>
 		<div>
-		<select class="element select small" id="brs" name="brs"> 
-			<option value="{{br}}" selected="selected">{{br}}</option>
-			<option value="1" >1</option>
-<option value="2" >2</option>
-<option value="3" >3</option>
-<option value="4" >4</option>
-<option value="5" >5</option>
-<option value="6" >6</option>
-<option value="7" >7</option>
-<option value="8" >8</option>
-<option value="9" >9</option>
-<option value="10" >10</option>
-
-		</select>
-		</div><p class="guidelines" id="guide_3"><small>How many bedrooms are in the home?</small></p> 
+			<input id="element_1" name="element_1" class="element text small" type="text" maxlength="255" value=""/> 
+		</div><p class="guidelines" id="guide_1"><small>What is the listed price in dollars?</small></p> 
 		</li>		<li id="li_4" >
-		<label class="description" for="brags">Number of Bedrooms Above Ground</label>
+		<label class="description" for="element_4">Number of Bedrooms </label>
 		<div>
-		<select class="element select small" id="brags" name="brags"> 
-			<option value="{{brag}}" selected="selected">{{brag}}</option>
-			<option value="0" >0</option>
+		<select class="element select small" id="element_4" name="element_4"> 
 			<option value="1" >1</option>
 <option value="2" >2</option>
-<option value="3" >3</option>
+<option value="3" selected="selected">3</option>
 <option value="4" >4</option>
 <option value="5" >5</option>
 <option value="6" >6</option>
@@ -324,13 +288,12 @@
 <option value="10" >10</option>
 
 		</select>
-		</div><p class="guidelines" id="guide_4"><small>How many of those bedrooms are above ground?</small></p> 
+		</div><p class="guidelines" id="guide_4"><small>How many bedrooms are in the home?</small></p> 
 		</li>		<li id="li_5" >
-		<label class="description" for="baths">Number of Full Bathrooms </label>
+		<label class="description" for="element_5">Number of Full Bathrooms </label>
 		<div>
-		<select class="element select small" id="baths" name="baths"> 
-			<option value="{{bath}}" selected="selected">{{bath}}</option>
-			<option value="1" >1</option>
+		<select class="element select small" id="element_5" name="element_5"> 
+			<option value="1" selected="selected">1</option>
 <option value="2" >2</option>
 <option value="3" >3</option>
 <option value="4" >4</option>
@@ -340,57 +303,26 @@
 		</select>
 		</div><p class="guidelines" id="guide_5"><small>How many full bathrooms (with sink, toilet, and bath/shower) are in the home?</small></p> 
 		</li>		<li id="li_6" >
-		<label class="description" for="hbaths">Number of Half Bathrooms </label>
+		<label class="description" for="element_6">Number of Half Bathrooms </label>
 		<div>
-		<select class="element select small" id="hbaths" name="hbaths"> 
-			<option value="{{hbath}}" selected="selected">{{hbath}}</option>
-			<option value="0" >0</option>
+		<select class="element select small" id="element_6" name="element_6"> 
+			<option value="" selected="selected">0</option>
 <option value="1" >1</option>
 <option value="2" >2</option>
 <option value="3" >3</option>
 
 		</select>
 		</div><p class="guidelines" id="guide_6"><small>How many half bathrooms are in the home?</small></p> 
+		</li>		<li id="li_2" >
+		<label class="description" for="element_2">Square Footage </label>
+		<div>
+			<input id="element_2" name="element_2" class="element text small" type="text" maxlength="255" value=""/> 
+		</div><p class="guidelines" id="guide_2"><small>What is the square footage of the home (above ground)?</small></p> 
 		</li>		<li id="li_7" >
-		<label class="description" for="sqft">Square Footage </label>
+		<label class="description" for="element_7">Level of Confidence for the Sale Time Estimate </label>
 		<div>
-			<input id="sqft" name="sqft" class="element text small" type="text" maxlength="255" value="{{sqft}}"/> 
-		</div><p class="guidelines" id="guide_7"><small>What is the square footage of the home (above ground)?</small></p> 
-		</li>		<li id="li_8" >
-		<label class="description" for="sqft">Property Tax </label>
-		<div>
-			<input id="tax" name="tax" class="element text small" type="text" maxlength="255" value="{{tax}}"/> 
-		</div><p class="guidelines" id="guide_8"><small>What is the annual property tax for your home?</small></p> 
-		</li>		<li id="li_9" >
-		<label class="description" for="age">Age </label>
-		<div>
-			<input id="age" name="age" class="element text small" type="text" maxlength="255" value="{{age}}"/> 
-		</div><p class="guidelines" id="guide_9"><small>How many years old is your home?</small></p> 
-		</li>		<li id="li_10" >
-		<label class="description" for="props">Please select if your home: </label>
-		<div>
-		<span>
-			<input id="prop_apt" name="prop_apt" class="element checkbox" type="checkbox" value="1" {{aptchecked}}/>
-<label class="choice" for="prop_apt">is an apartment,</label><div>
-<input id="prop_flood" name="prop_flood" class="element checkbox" type="checkbox" value="1" {{floodchecked}}/>
-<label class="choice" for="prop_flood">is in the flood zone,</label><div>
-<input id="prop_fence" name="prop_fence" class="element checkbox" type="checkbox" value="1" {{fencechecked}}/>
-<label class="choice" for="prop_fence">is on a fenced property,</label><div>
-<input id="prop_hottub" name="prop_hottub" class="element checkbox" type="checkbox" value="1" {{hottubchecked}}/>
-<label class="choice" for="prop_hottub">contains a hot tub,</label><div>
-<input id="prop_curts" name="prop_curts" class="element checkbox" type="checkbox" value="1" {{curtschecked}}/>
-<label class="choice" for="prop_curts">includes window coverings,</label><div>
-<input id="prop_vinyl" name="prop_vinyl" class="element checkbox" type="checkbox" value="1" {{vinylchecked}}/>
-<label class="choice" for="prop_vinyl">contains vinyl siding,</label><div>
-<input id="prop_floor" name="prop_floor" class="element checkbox" type="checkbox" value="1" {{nctilechecked}}/>
-<label class="choice" for="prop_floor">contains non-ceramic tile flooring.</label><div>
-
-		</span<p class="guidelines" id="guide_10"><small></small></p> 
-		</li>		<li id="li_11" >
-		<label class="description" for="conflevel">Level of Confidence for the Sale Time Estimate </label>
-		<div>
-			<input id="conflevel" name="conflevel" class="element text small" type="text" maxlength="255" value="{{conflevel}}"/> 
-		</div><p class="guidelines" id="guide_11"><small>For example, entering 99 will estimate the number of days that 99% of homes like yours would sell.</small></p> 
+			<input id="element_7" name="element_7" class="element text small" type="text" maxlength="255" value=""/> 
+		</div><p class="guidelines" id="guide_7"><small>For example, entering 99 will estimate the number of days that 99% of homes like yours would sell.</small></p> 
 		</li>
 			
 					<li class="buttons">
@@ -405,10 +337,6 @@
 			Generated by <a href="http://www.phpform.org">pForm</a>
 		</div>
 //-->
-		<div class="form_description" id="footer">
-			<h2>{{message}}</h2>
-		</div>
-
 	</div>
 	<img id="bottom" src="bottom.png" alt="">
 	</body>

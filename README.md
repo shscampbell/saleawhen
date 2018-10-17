@@ -18,7 +18,7 @@ Sale A-When provides information about how different upgrades to a property coul
 
 ## Tech/framework used
 
-<b>Built with</b>b
+<b>Built with</b>
 - [Python](https://www.python.org/)
 - [Flask](https://flask.pocoo.org/)
 
